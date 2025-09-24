@@ -733,7 +733,9 @@ async function main() {
 
   // ---- TẠO CÁC VÒNG CHỮ QUAY QUANH HÀNH TINH ----
   const ringTexts = [
-    "LoveLoom",
+    "Happy One Month Anniversary! ❤️",
+    "From Moon with Love 💜",
+    "Presented by Yinnz 💖",
     ...(window.dataLove2Loveloom && window.dataLove2Loveloom.data.ringTexts
       ? window.dataLove2Loveloom.data.ringTexts
       : []),
