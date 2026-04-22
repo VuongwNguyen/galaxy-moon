@@ -1511,8 +1511,16 @@ async function main() {
 async function getHeartImages() {
   let heartImages = [...(window.dataLove2Loveloom?.data?.heartImages || [])];
 
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+
+  if (!name) {
+    console.warn("⚠️ Không có ?name= trong URL, bỏ qua tải ảnh từ server.");
+    return heartImages;
+  }
+
   try {
-    const res = await fetch("https://be-moon.onrender.com/gallary/items");
+    const res = await fetch(`https://be-moon.onrender.com/gallary/items?name=${encodeURIComponent(name)}`);
     const data = await res.json();
     heartImages.push(...data.meta.map((item) => item.imageUrl));
   } catch (err) {
