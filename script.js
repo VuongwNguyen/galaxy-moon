@@ -732,14 +732,7 @@ async function main() {
   scene.add(planet);
 
   // ---- TẠO CÁC VÒNG CHỮ QUAY QUANH HÀNH TINH ----
-  const ringTexts = [
-    "Happy One Month Anniversary! ❤️",
-    "From Moon with Love 💜",
-    "Presented by Yinnz 💖",
-    ...(window.dataLove2Loveloom && window.dataLove2Loveloom.data.ringTexts
-      ? window.dataLove2Loveloom.data.ringTexts
-      : []),
-  ];
+  const ringTexts = window.dataLove2Loveloom?.data?.ringTexts ?? [];
 
   function createTextRings() {
     const numRings = ringTexts.length;
